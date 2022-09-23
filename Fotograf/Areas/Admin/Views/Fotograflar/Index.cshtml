@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Fotograflar>
+
+
+<a class="btn btn-primary" asp-controller="Fotograflar" asp-action="Create">Yeni Fotograf</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+
+            <td>@Html.DisplayNameFor(p=>p.Id)</td>
+            <td>@Html.DisplayNameFor(p=>p.KategoriAdi)</td>
+            <td>@Html.DisplayNameFor(p=>p.FotografAdi)</td>
+            <td>@Html.DisplayNameFor(p=>p.Aciklama)</td>
+            <td>@Html.DisplayNameFor(p=>p.CekilenTarihi)</td>
+            <td>@Html.DisplayNameFor(p=>p.Fotografcı)</td>
+            <td>@Html.DisplayNameFor(p=>p.Fiyat)</td>
+            <td>@Html.DisplayNameFor(p=>p.BarkodNo)</td>
+
+
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.KategoriAdi</td>
+                <td>@item.FotografAdi</td>
+                <td>@item.Aciklama</td>
+                <td>@item.CekilenTarihi</td>
+                <td>@item.Fotografcı</td>
+                <td>@item.Fiyat</td>
+                <td>@item.BarkodNo</td>
+
+
+                <td>
+                    <a class="btn btn-danger" asp-action="Delete" asp-controller="Fotograflar" asp-route-id="@item.Id">Sil</a>
+                    <a class="btn btn-info" asp-action="Update" asp-controller="Fotograflar" asp-route-id="@item.Id">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+

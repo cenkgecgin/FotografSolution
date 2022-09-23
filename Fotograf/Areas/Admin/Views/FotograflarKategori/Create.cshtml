@@ -1,0 +1,24 @@
+﻿@model FotograflarKategori
+
+
+<form asp-controller="FotograflarKategori" asp-action="Create" method="post">
+
+    <div class="mb-3">
+        <label asp-for="FotografId" class="form-label">Fotograf Id</label>
+        <input type="text" class="form-control" asp-for="FotografId">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="KategoriId" class="form-label">Kategori Id</label>
+        <input type="text" class="form-control" asp-for="KategoriId">
+    </div>
+
+    
+
+
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+
+    <a class="btn btn-info" asp-action="Index" asp-controller="FotograflarKategori">Listeye Geri Dön</a>
+
+</form>
