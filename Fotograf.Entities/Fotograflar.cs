@@ -13,11 +13,12 @@ namespace Fotograf.Entities
         public string Fotografcı { get; set; }
 
         public string? TeknikOzellikler { get; set; }
-        public DateTime YapimTeknigi { get; set; }
+
+        public string Images { get; set; }
 
         public string? Malzemeler { get; set; }
 
-        public string? BarkodNo { get; set; }
+        
         public Tedarikci? Tedarikci { get; set; }
         public decimal Fiyat { get; set; }
         public DateTime CekilenTarihi { get; set; }

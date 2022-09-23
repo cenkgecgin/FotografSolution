@@ -1,0 +1,28 @@
+﻿@model FotograflarCesit
+
+
+<form asp-controller="FotograflarCesit" asp-action="Update" method="post">
+
+    <div class="mb-3">
+        <label asp-for="CesidAdi" class="form-label">CesidAdi</label>
+        <input type="text" class="form-control" asp-for="CesidAdi">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Images" class="form-label">Images</label>
+        <input type="text" class="form-control" asp-for="Images">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Acıklama" class="form-label">Acıklama</label>
+        <input type="text" class="form-control" asp-for="Acıklama">
+    </div>
+
+
+
+
+
+    <input type="submit" class="btn btn-primary" value="Kaydet" />
+    <a class="btn btn-info" asp-action="Index" asp-controller="FotograflarCesit">Listeye Geri Dön</a>
+
+</form>

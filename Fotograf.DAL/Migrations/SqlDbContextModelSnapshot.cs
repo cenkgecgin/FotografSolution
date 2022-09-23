@@ -34,9 +34,6 @@ namespace Fotograf.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BarkodNo")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CekilenTarihi")
                         .HasColumnType("datetime2");
 
@@ -54,6 +51,10 @@ namespace Fotograf.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Images")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("KategoriAdi")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -67,14 +68,39 @@ namespace Fotograf.DAL.Migrations
                     b.Property<string>("TeknikOzellikler")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("YapimTeknigi")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("Id");
 
                     b.HasIndex("TedarikciId");
 
                     b.ToTable("Fotograflar");
+                });
+
+            modelBuilder.Entity("Fotograf.Entities.FotograflarCesit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Acıklama")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CesidAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Images")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FotograflarCesitler");
                 });
 
             modelBuilder.Entity("Fotograf.Entities.FotograflarKategori", b =>
@@ -99,30 +125,6 @@ namespace Fotograf.DAL.Migrations
                     b.ToTable("FotograflarKategori");
                 });
 
-            modelBuilder.Entity("Fotograf.Entities.Kargo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("KargoAdi")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KargoTel")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Kargolar");
-                });
-
             modelBuilder.Entity("Fotograf.Entities.Kategori", b =>
                 {
                     b.Property<int>("Id")
@@ -145,33 +147,6 @@ namespace Fotograf.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Kategoriler");
-                });
-
-            modelBuilder.Entity("Fotograf.Entities.Menu", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Acıklama")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("Fiyat")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("MenuAdi")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Menuler");
                 });
 
             modelBuilder.Entity("Fotograf.Entities.Tedarikci", b =>
@@ -203,6 +178,34 @@ namespace Fotograf.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tedarikciler");
+                });
+
+            modelBuilder.Entity("Fotograf.Entities.Teslim", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Images")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TeslimEdenAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TeslimEdenTel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Teslimler");
                 });
 
             modelBuilder.Entity("Fotograf.Entities.Uyeler", b =>

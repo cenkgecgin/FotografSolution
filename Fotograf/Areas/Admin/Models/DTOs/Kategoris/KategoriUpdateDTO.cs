@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Fotograf.Areas.Admin.Models.DTOs.Kategoris
 {
 
-    [Area("admin")]
+    [Area("Admin")]
     public class KategoriUpdateDTO
     {
         public int KategoriId { get; set; }

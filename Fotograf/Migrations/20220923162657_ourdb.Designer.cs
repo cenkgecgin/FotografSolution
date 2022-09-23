@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fotograf.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    [Migration("20220923123015_OurDb")]
-    partial class OurDb
+    [Migration("20220923162657_ourdb")]
+    partial class ourdb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

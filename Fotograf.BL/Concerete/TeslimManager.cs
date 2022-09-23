@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Fotograf.BL.Concerete
 {
-    public class KargoManager : ManaBase<Kargo>, IKargoManager
+    public class TeslimManager : ManaBase<Teslim>, ITeslimManager
     {
-        public bool IsmiKontrolEt(string KargoAdi)
+        public bool IsmiKontrolEt(string TeslimEdenAdi)
         {
-            var sonuc = base.repo.GetAll(p => p.KargoAdi == KargoAdi);
+            var sonuc = base.repo.GetAll(p => p.TeslimEdenAdi == TeslimEdenAdi);
             if (sonuc != null)
             {
                 return true;
@@ -25,9 +25,9 @@ namespace Fotograf.BL.Concerete
         }
 
 
-        public override int Add(Kargo input)
+        public override int Add(Teslim input)
         {
-            if (!IsmiKontrolEt(input.KargoAdi))
+            if (!IsmiKontrolEt(input.TeslimEdenAdi))
                 return base.Add(input);
             else
                 return -1;

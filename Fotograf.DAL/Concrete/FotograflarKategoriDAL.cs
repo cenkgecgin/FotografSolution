@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Fotograf.DAL.Concrete
 {
-    public class FotrograflarKategoriDAL: RepoBase<FotograflarKategori>, IFotograflarKategoriDAL
+    public class FotograflarKategoriDAL: RepoBase<FotograflarKategori>, IFotograflarKategoriDAL
     {
     }
 }

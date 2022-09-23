@@ -1,75 +1,73 @@
 ﻿using Fotograf.DAL.Contexts;
 using Fotograf.Entities;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 
 namespace Fotograf.Areas.Admin.Controllers
 {
     [Area("Admin")]
     //[Authorize(Roles = "admin")]
-    public class KargoController : Controller
+    public class TeslimController : Controller
     {
         private readonly SqlDbContext context;
 
-        public KargoController(SqlDbContext context)
+        public TeslimController(SqlDbContext context)
         {
             this.context = context;
         }
         [HttpGet]
         public IActionResult Index()
         {
-            var result = context.Kargolar.ToList();
+            var result = context.Teslimler.ToList();
             return View(result);
         }
         [HttpGet]
         public IActionResult Create()
         {
-            Kargo kargo = new();
-            return View(kargo);
+            Teslim teslim = new();
+            return View(teslim);
         }
 
         [HttpPost]
-        public IActionResult Create(Kargo kargo)
+        public IActionResult Create(Teslim teslim)
         {
             if (ModelState.IsValid)
             {
 
-                context.Kargolar.Add(kargo);
+                context.Teslimler.Add(teslim);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
 
 
-            return View(kargo);
+            return View(teslim);
         }
         [HttpGet]
         public IActionResult Update(int id)
         {
-            Kargo kargo = context.Kargolar.Find(id);
-            return View(kargo);
+            Teslim teslim = context.Teslimler.Find(id);
+            return View(teslim);
         }
 
         [HttpPost]
-        public IActionResult Update(Kargo kargo)
+        public IActionResult Update(Teslim teslim)
         {
-            context.Update(kargo);
+            context.Update(teslim);
             context.SaveChanges();
             return RedirectToAction("Index");
         }
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var kargo = context.Kargolar.Find(id);
-            return View(kargo);
+            var teslim = context.Teslimler.Find(id);
+            return View(teslim);
         }
 
         [HttpPost]
-        public IActionResult Delete(Kargo kargo)
+        public IActionResult Delete(Teslim teslim)
         {
 
 
-            context.Remove(kargo);
+            context.Remove(teslim);
             context.SaveChanges();
             return RedirectToAction("Index");
 

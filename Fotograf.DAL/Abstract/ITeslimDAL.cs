@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fotograf.BL.Abstract
+namespace Fotograf.DAL.Abstract
 {
-    public  interface IMenuManager: IManaBase<Menu>
+    public interface ITeslimDAL : IRepoBase<Teslim>
     {
     }
 }

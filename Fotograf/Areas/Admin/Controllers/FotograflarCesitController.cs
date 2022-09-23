@@ -1,75 +1,73 @@
 ﻿using Fotograf.DAL.Contexts;
 using Fotograf.Entities;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 
 namespace Fotograf.Areas.Admin.Controllers
 {
     [Area("Admin")]
     //[Authorize(Roles = "admin")]
-    public class MenuController : Controller
+    public class FotograflarCesitController : Controller
     {
         private readonly SqlDbContext context;
 
-        public MenuController(SqlDbContext context)
+        public FotograflarCesitController(SqlDbContext context)
         {
             this.context = context;
         }
         [HttpGet]
         public IActionResult Index()
         {
-            var result = context.Menuler.ToList();
+            var result = context.FotograflarCesitler.ToList();
             return View(result);
         }
         [HttpGet]
         public IActionResult Create()
         {
-            Menu menu = new();
-            return View(menu);
+            FotograflarCesit fotografcesit = new();
+            return View(fotografcesit);
         }
 
         [HttpPost]
-        public IActionResult Create(Menu menu)
+        public IActionResult Create(FotograflarCesit fotografcesit)
         {
             if (ModelState.IsValid)
             {
 
-                context.Menuler.Add(menu);
+                context.FotograflarCesitler.Add(fotografcesit);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
 
 
-            return View(menu);
+            return View(fotografcesit);
         }
         [HttpGet]
         public IActionResult Update(int id)
         {
-            Menu menu = context.Menuler.Find(id);
-            return View(menu);
+            FotograflarCesit fotografcesit = context.FotograflarCesitler.Find(id);
+            return View(fotografcesit);
         }
 
         [HttpPost]
-        public IActionResult Update(Menu menu)
+        public IActionResult Update(FotograflarCesit fotografcesit)
         {
-            context.Update(menu);
+            context.Update(fotografcesit);
             context.SaveChanges();
             return RedirectToAction("Index");
         }
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var menu = context.Menuler.Find(id);
-            return View(menu);
+            var fotografcesit = context.FotograflarCesitler.Find(id);
+            return View(fotografcesit);
         }
 
         [HttpPost]
-        public IActionResult Delete(Menu menu)
+        public IActionResult Delete(FotograflarCesit fotografcesit)
         {
 
 
-            context.Remove(menu);
+            context.Remove(fotografcesit);
             context.SaveChanges();
             return RedirectToAction("Index");
 

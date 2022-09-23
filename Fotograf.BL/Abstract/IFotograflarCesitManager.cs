@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fotograf.DAL.Abstract
+namespace Fotograf.BL.Abstract
 {
-    public interface IKargoDAL : IRepoBase<Kargo>
+    public  interface IFotograflarCesitManager: IManaBase<FotograflarCesit>
     {
     }
 }

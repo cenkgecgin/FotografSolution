@@ -26,12 +26,12 @@ namespace Fotograf.DAL.Contexts
         
         public DbSet<Fotograflar> Fotograflar { get; set; }
         public DbSet<FotograflarKategori> FotograflarKategori { get; set; }
-        public DbSet<Menu> Menuler { get; set; }
+        public DbSet<FotograflarCesit> FotograflarCesitler { get; set; }
         public DbSet<Kategori> Kategoriler { get; set; }
         
         public DbSet<Tedarikci> Tedarikciler { get; set; }
         public DbSet<Uyeler> Uyeler { get; set; }
-        public DbSet<Kargo> Kargolar { get; set; }
+        public DbSet<Teslim> Teslimler { get; set; }
         
 
     }

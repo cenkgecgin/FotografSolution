@@ -38,9 +38,9 @@ builder.Services.AddScoped<IKategoriManager, KategoriManager>();
 builder.Services.AddScoped<IUyelerManager, UyelerManager>();
 builder.Services.AddScoped<IFotograflarManager, FotograflarManager>();
 builder.Services.AddScoped<ITedarikciManager, TedarikciManager>();
-builder.Services.AddScoped<IMenuManager, MenuManager>();
+builder.Services.AddScoped<IFotograflarCesitManager, FotograflarCesitManager>();
 builder.Services.AddScoped<IFotograflarKategoriManager, FotograflarKategoriManager>();
-builder.Services.AddScoped<IKargoManager, KargoManager>();
+builder.Services.AddScoped<ITeslimManager, TeslimManager>();
 
 #region Cookie Ayarlari
 

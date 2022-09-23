@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Fotograf.Migrations
 {
-    public partial class OurDb : Migration
+    public partial class ourdb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

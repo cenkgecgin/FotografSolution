@@ -1,0 +1,28 @@
+﻿@model Teslim
+
+<form asp-controller="Teslim" asp-action="Delete" method="post">
+    <div class="mb-3">
+        <label asp-for="TeslimEdenAdi" class="form-label">@Model.TeslimEdenAdi</label>
+        <input type="text" class="form-control" asp-for="TeslimEdenAdi" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TeslimEdenTel" class="form-label">@Model.TeslimEdenTel</label>
+        <input type="text" class="form-control" asp-for="TeslimEdenTel" readonly>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Images" class="form-label">@Model.Images</label>
+        <input type="text" class="form-control" asp-for="Images" readonly>
+    </div>
+
+    <input type="hidden" asp-for="Id" />
+
+
+    <button type="submit" class="btn btn-danger">Sil</button>
+
+    <a class="btn btn-primary" asp-action="Index" asp-controller="Teslim">Listeye Geri Dön</a>
+
+
+
+
+</form>

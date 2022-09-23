@@ -10,6 +10,22 @@ namespace Fotograf.DAL.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "FotograflarCesitler",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CesidAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Acıklama = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Images = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FotograflarCesitler", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "FotograflarKategori",
                 columns: table => new
                 {
@@ -22,21 +38,6 @@ namespace Fotograf.DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_FotograflarKategori", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Kargolar",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    KargoAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    KargoTel = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Kargolar", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -55,22 +56,6 @@ namespace Fotograf.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Menuler",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MenuAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Fiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Acıklama = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Menuler", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Tedarikciler",
                 columns: table => new
                 {
@@ -85,6 +70,22 @@ namespace Fotograf.DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tedarikciler", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Teslimler",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TeslimEdenAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TeslimEdenTel = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Images = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Teslimler", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -118,9 +119,8 @@ namespace Fotograf.DAL.Migrations
                     Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Fotografcı = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TeknikOzellikler = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    YapimTeknigi = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Images = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Malzemeler = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BarkodNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TedarikciId = table.Column<int>(type: "int", nullable: true),
                     Fiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CekilenTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -149,16 +149,16 @@ namespace Fotograf.DAL.Migrations
                 name: "Fotograflar");
 
             migrationBuilder.DropTable(
-                name: "FotograflarKategori");
+                name: "FotograflarCesitler");
 
             migrationBuilder.DropTable(
-                name: "Kargolar");
+                name: "FotograflarKategori");
 
             migrationBuilder.DropTable(
                 name: "Kategoriler");
 
             migrationBuilder.DropTable(
-                name: "Menuler");
+                name: "Teslimler");
 
             migrationBuilder.DropTable(
                 name: "Uyeler");

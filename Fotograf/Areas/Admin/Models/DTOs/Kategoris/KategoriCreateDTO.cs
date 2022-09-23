@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Fotograf.Areas.Admin.Models.DTOs.Kategoris
 {
-    [Area("admin")]
+    [Area("Admin")]
     public class KategoriCreateDTO
     {
 

@@ -1,4 +1,4 @@
-﻿using Fotograf.DAL.Abstract;
+﻿using Fotograf.BL.Abstract;
 using Fotograf.Entities;
 using System;
 using System.Collections.Generic;
@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fotograf.DAL.Concrete
+namespace Fotograf.BL.Concerete
 {
-    internal class MenuDAL: RepoBase<Menu>,IMenuDAL
+    public class FotograflarCesitManager: ManaBase<FotograflarCesit>,IFotograflarCesitManager
     {
     }
 }

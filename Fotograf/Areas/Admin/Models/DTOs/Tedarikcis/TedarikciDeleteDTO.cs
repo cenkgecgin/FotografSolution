@@ -2,7 +2,7 @@
 
 namespace Fotograf.Areas.Admin.Models.DTOs.Tedarikcis
 {
-    [Area("admin")]
+    [Area("Admin")]
     public class TedarikciDeleteDTO
     {
         public string Ad { get; set; }

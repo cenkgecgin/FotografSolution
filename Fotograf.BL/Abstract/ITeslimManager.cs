@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fotograf.BL.Abstract
 {
-     public interface IKargoManager: IManaBase<Kargo>
+     public interface ITeslimManager: IManaBase<Teslim>
     {
     }
 }

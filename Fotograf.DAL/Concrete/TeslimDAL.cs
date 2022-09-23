@@ -1,4 +1,4 @@
-﻿using Fotograf.BL.Abstract;
+﻿using Fotograf.DAL.Abstract;
 using Fotograf.Entities;
 using System;
 using System.Collections.Generic;
@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fotograf.BL.Concerete
+namespace Fotograf.DAL.Concrete
 {
-    public class MenuManager: ManaBase<Menu>,IMenuManager
+    public interface IKargoDAL : IRepoBase<Teslim>
     {
     }
 }
